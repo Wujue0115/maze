@@ -1,0 +1,381 @@
+
+
+
+html, body{
+    width: 100vw;
+    height: 100vh;
+    background: #2b2b2b;
+}
+* {
+    box-sizing: border-box;
+}
+.wrap {
+    width: 100%;
+    height: 100%;
+    min-width: 1050px;
+    min-height: 660px;
+
+    background: #2b2b2b;
+}
+.header {
+    display: flex;
+    width: 100%;
+    height: 8%;
+
+    margin: auto;
+    /*background-color: #2b2b2b;*/
+}
+.logo {
+    width: 28px;
+    height: 28px;
+    margin-right: 32px;
+    box-shadow: 0px 0px 8px #fff;
+}
+.header h1 {
+    /*margin: auto;*/
+    font-size: 26px;
+    font-family: 'Georgia';
+    letter-spacing: 5px;
+    word-spacing: 14px;
+    color: #fff;
+    text-shadow: 1px 1px #000,
+                 0px 0px 8px #fff;
+}
+.container {
+    display: flex;
+    width: 100%;
+    height: 92%;  
+}
+.block-setting {
+    display: block;
+    width: 37.5%;
+    height: 97%;
+    margin: 0px 0.8% auto 1.5%;
+
+    box-sizing: border-box;
+}
+/*
+.block-setting::-webkit-scrollbar {
+    width: 0px;
+*/
+.box {
+    width: 100%;
+    padding-bottom: 10px;
+    margin: auto auto 3%;
+
+    background: radial-gradient(#555, #444, #333);
+    background: #555;
+    border-radius: 5px;
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.6),
+                3px 3px 6px rgba(0, 0, 0, 1);
+
+    transition: all .2s;
+}
+.box-header {
+    display: flex;
+    width: 100%;
+    height: 32px;
+
+    background: #333;
+    border-radius: 5px 5px 0px 0px;
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.6),
+                inset 0px -1px 2px rgba(0, 0, 0, 0.8); 
+}
+.box-header h2 {
+    width: 95%;
+    margin: auto;
+}
+.line {
+    width: 100%;
+    padding: 10px 1em 0px;
+}
+.input-text {
+    width: 10%;
+    box-shadow: inset -1px -1px 3px rgba(0, 0, 0, 1);
+}
+input[type="text"] {
+    border-radius: 5px;
+
+    color: #2b2b2b;
+    font-size: 15px;
+    font-family: 'Courier New';
+    font-weight: bold;
+    font-style: italic;
+}
+.block-canvas {
+    width: 58.2%;
+    height: 97%;
+    margin: 0px 1.5% auto 0.8%;
+
+    background-color: #555;
+    border-radius: 5px;
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.6),
+                3px 3px 6px rgba(0, 0, 0, 1);
+}
+.box-header-font {
+    color: #fff;
+    font-size: 19px;
+    font-family: 'Georgia';
+    text-align: center;
+    text-shadow: 1px 1px #000,
+                 0px 0px 8px #fff;
+    letter-spacing: 3px;
+}
+.box-font {
+    font-size: 16px;
+    font-family: 'Courier New';
+
+    color: #fff;
+    text-shadow: 1px 1px #000;
+}
+.comment-font {
+    font-size: 15px;
+    font-family: 'Courier New';
+
+    color: #fff;
+    text-shadow: 1px 1px #000;
+}
+select {
+    width: 45%;
+
+    border-radius: 5px;
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 1),
+                inset -1px -1px 3px rgba(0, 0, 0, 1);
+
+    transition: all .2s;
+}
+.select-font {
+    color: #2b2b2b;
+    font-size: 15px;
+    font-family: 'Courier New';
+    font-style: italic;
+    font-weight: bold;
+}
+select:focus {
+    outline: none;
+}
+.button-font {
+    color: #555;
+    font-size: 16px;
+    font-family: 'Courier New';
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.button-check, .button-click {
+    display: inline-block;
+    width: 88%;
+    padding: 3px 0px 3px 0px;
+
+    border: 1px solid rgba(96, 96, 96, .8);
+    background: #eee;
+    border-radius: 5px;
+    box-shadow: -1px -1px 1px rgba(255, 255, 255, 0.3),
+                1px 1px 3px rgba(0, 0, 0, 0.8);
+
+    transition: all .2s;
+}
+.box-color {
+    width: 11%; 
+    padding: 5px 0 5px;
+    margin: 0px auto 0%; 
+    border-radius: 5px;
+    background-color: #999;
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.3),
+                3px 3px 6px rgba(0, 0, 0, 0.5);
+
+                text-align: center;
+}
+.box-color .div-color {
+    width: 85%; 
+    padding: 3px 0px 3px;
+    margin: auto auto 5px;
+    box-shadow: 0px 0px;
+    border-radius: 5px;
+    background-color: #2b2b2b;
+
+    font-size: 14px; 
+    font-family: 'Courier New';
+    color: #fff;
+    text-shadow: 1px 1px #000,
+                 0px 0px 8px #fff;
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.6),
+                inset -1px -1px 2px rgba(0, 0, 0, 0.6);
+}
+.box-color input[type=color] {
+    width: 80%; 
+    height: 22px;
+
+    border-radius: 5px;
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, .9),
+                inset -1px -1px 2px rgba(0, 0, 0, .9);
+}
+.button-color {
+    width: 80%;
+    padding: 2px 0px 2px;
+    margin: 0px auto 6px;
+
+    border-radius: 3px;
+    border: 1px solid rgba(96, 96, 96, .6);
+    background: #eee;
+    font-size: 13px;
+    font-family: 'Helvetica';
+    color: #555;
+    box-shadow: -1px -1px 1px rgba(255, 255, 255, 0.3),
+                1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+.box:hover {
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.6),
+                0px 0px 5px rgba(255, 255, 255, .8),
+                0px 0px 10px rgba(255, 255, 255, .6),
+                0px 0px 15px rgba(255, 255, 255, .4);
+}
+.button-check:disabled {
+    opacity: .3;
+}
+.button-check:hover {
+    cursor: default;
+}
+.button-color:hover {
+    cursor: default;
+}
+.button-click:hover,
+.button-color-reset:hover {
+    /*background:rgba(255, 160, 0, .9);*/
+    background: #333;
+    color: #fff;
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, .6),
+                1px 1px 3px rgba(0, 0, 0, 0.8);
+    text-shadow: 0px 0px 8px #fff;
+
+    cursor: default;
+}
+.button-click:active,
+.button-color-reset:active {
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, .6),
+                1px 1px 3px rgba(255, 255, 255, 0.8);
+}
+select:hover,
+input[type="text"]:hover {
+    background: #333;
+    color: #fff;
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, .6);
+}
+input[type="text"]:focus {
+    outline: none;
+}
+
+#canvas {
+    width: 100%;
+    height: 100%;
+    /*
+    background: #f00;
+    opacity: 1;
+    */
+}
+#canvas2 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /*
+    background: #fa0;
+    opacity: 0.5;  
+    */
+}
+.slider-speed {
+    -webkit-appearance: none;
+
+    width: 70%;
+    height: 8px;
+    margin-left: 10px;
+
+    box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 1),
+                inset -1px -1px 3px rgba(0, 0, 0, 1);
+    border-radius: 5px;
+}
+.slider-speed::-webkit-slider-thumb {
+    -webkit-apperance: none;
+    appearance: none;
+
+    width: 20px;
+    height: 20px;
+
+    border: 1px solid rgba(96, 96, 96, .6);
+    border-radius: 8px;
+    background: #eee;
+    box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .4),
+                1px 1px 3px rgba(0, 0, 0, .9);
+    transition: all .3s;
+}
+.slider-speed::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+
+    border: 1px solid rgba(96, 96, 96, .6);
+    border-radius: 8px;
+    background: #eee;
+    box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .4),
+                1px 1px 3px rgba(0, 0, 0, .9);
+    transition: all .3s;
+}
+.slider-speed::-webkit-slider-thumb:hover {
+    width: 30px;
+    height: 21px;
+    background: #333;
+    box-shadow: inset 1px 1px 1px rgba(255, 255, 255, .4),
+                1px 1px 3px rgba(0, 0, 0, .9),
+                0px 0px 3px 1px #fff;
+    cursor: pointer;
+}
+
+@media screen and (max-width:1200px) {
+    .logo {
+        width: 24px;
+        height: 24px;
+    }
+    .header h1 {
+        font-size: 22px;
+    }
+    .box-header-font {
+        font-size: 16px;
+    }
+    .box-font {
+        font-size: 13px;
+    }
+    .comment-font {
+        font-size: 12px;
+    }
+    input[type="text"] {
+        font-size: 12px;
+    }
+    .select-font {
+        font-size: 12px;
+    }
+    .button-font {
+        font-size: 13px;
+    }
+    .box-color .div-color {
+        font-size: 11px;
+    }
+    .box-color .button-color {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width:1160px) {
+    .box-font {
+        font-size: 12px;
+    }
+    .comment-font {
+        font-size: 11px;
+    }
+    input[type="text"] {
+        font-size: 10px;
+        letter-spacing: 0px;
+    }
+    .slider-speed {
+        width: 65%;
+    }
+    select {
+        width: 45%;
+    }
+}

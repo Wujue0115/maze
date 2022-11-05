@@ -1,0 +1,98 @@
+html, body{
+    width: 100vw;
+    height: 100vh;
+    background: #2b2b2b;
+    /**/ cursor: none; /**/
+}
+* {
+    box-sizing: border-box;
+}
+.wrap {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    min-width: 1100px;
+    min-height: 680px;
+}
+.container {
+    /**
+    width: 100%;
+    height: 100%;
+    /**/
+    /**
+    width: 68%;
+    height: 70%;
+    /**/
+    width: 80%;
+    height: 77%;
+    /**/
+    margin: auto;
+}
+.block-canvas {
+    /*
+    width: 100%;
+    height: 100%;
+    /**/
+    /**/
+    width: 100%;
+    height: 70%;
+    /**/
+    /*
+    background-color: rgba(55, 55, 55, .0);
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, .8),
+                0px 0px 10px rgba(255, 255, 255, .7),
+                0px 0px 15px rgba(255, 255, 255, .6),
+                0px 0px 20px rgba(255, 255, 255, .5),
+                0px 0px 30px rgba(255, 255, 255, .4);
+    /**/
+}
+.block-click {
+    display: flex;
+    width: 20%;
+    height: 35%;
+    margin: auto;
+}
+#button-click {
+    z-index: 1;
+    width: auto;
+    height: auto;
+    margin: auto;
+    padding: 10px;
+
+    font-size: 35px;
+    font-family: "Courier New";
+    color: #fff;
+    text-align: center;
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, .8);
+}
+#button-click:hover {
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, .9),
+                 0px 0px 10px rgba(255, 255, 255, .8),
+                 0px 0px 15px rgba(255, 255, 255, .7),
+                 0px 0px 20px rgba(255, 255, 255, .6);;
+}
+#cursor {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    width: 30px;
+    height: 30px;
+
+    background: rgba(255, 255, 255, .2);
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 5px rgba(255, 255, 255, .8),
+                0px 0px 5px rgba(255, 255, 255, .8),
+                0px 0px 10px rgba(255, 255, 255, .7),
+                0px 0px 15px rgba(255, 255, 255, .6);
+
+    font-size: 1px;
+    color: #fff;
+    text-align: center;
+}
+#canvas3 {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}

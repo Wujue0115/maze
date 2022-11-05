@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze World</title>
+    <link rel="stylesheet" href="CSS/Reset.css"/>
+    <link rel="stylesheet" href="CSS/Style.css"/>
+
+    <script src="JavaScript/ExtendFunction.js"></script>
+    <script src="JavaScript/DataStructure.js"></script>
+    <script src="JavaScript/Maze.js"></script>
+</head>
+<body style="opacity: 0;">
+    <div class="wrap">
+        <div class="header">
+            <div style="display: flex; margin: auto auto auto auto;">
+                <img class="logo" src="Images/logo.png" alt="">
+                <h1>Maze World</h1>
+            </div>
+        </div>
+        <div class="container">
+            <div class="block-setting">
+                <div class="box">
+                    <div class="box-header box-header-font">
+                        <h2>Setting</h2>
+                    </div>
+                    <div class="line">
+                        <label class="box-font">Rows:</label>
+                        <input type="text" class="input-text input-font" id="text-rows" onfocus="this.select()" value="19">
+                        <label class="comment-font" id="label-rows">(5 <= value <= 101 and  value is odd)</label>
+                    </div>
+                    <div class="line">
+                        <label class="box-font">Cols:</label>
+                        <input type="text" class="input-text input-font" id="text-cols" onfocus="this.select()" value="19">
+                        <label class="comment-font" id="label-cols">(5 <= value <= 101 and  value is odd)</label>
+                    </div>
+                    <div class="line">
+                        <label class="box-font">Generation algorithm:</label>
+                        <select class="select-font" id="select-generation-algorithm">
+                            <option value="dfs">Randomized depth-first search (Recursive backtracker algorithm)</option>
+                            <option value="eller">Eller's algorithm</option>
+                            <option value="kruskal">Randomized Kruskal's algorithm</option>
+                            <option value="prim">Randomized Prim's algorithm</option>
+                            <option value="traversal">Random traversal algorithm</option>
+                            <option value="recursive-division">Recursive division algorithm</option>
+                            <option value="aldous-broder">Aldous-Broder algorithm</option>
+                            <option value="wilson">Wilson's algorithm</option>
+                            <option value="hunt-and-kill">Hunt-and-Kill algorithm</option>
+                            <option value="growing-tree">Growing tree algorithm (Newest/Random, 75/25 split)</option>
+                            <option value="binary-tree">Binary tree algorithm</option>
+                            <option value="sidewinder">Sidewinder algorithm</option>
+                            <option value="a-star">Randomized A-Star algorithm</option>
+                        </select>
+                    </div>
+                    <div class="line">
+                        <label class="box-font">Solving algorithm:</label>
+                        <select class="select-font" id="select-solving-algorithm">
+                            <option value="dfs">Depth-first search</option>
+                            <option value="bfs">Breadth-first search</option>
+                            <option value="btfs">Best-first search</option>
+                            <option value="astar">A-Star algorithm</option>
+                        </select>
+                    </div>
+                    <div class="line">
+                        <label class="box-font">Flooding color:</label>
+                        <select class="select-font" id="select-flooding-color">
+                            <option value="pccs-pale">PCCS pale</option>
+                            <option value="pccs-pale+">PCCS pale+</option>
+                            <option value="pccs-light">PCCS light</option>
+                            <option value="pccs-light+">PCCS light+</option>
+                            <option selected value="pccs-bright">PCCS bright</option>
+                            <option value="pccs-light-grayish">PCCS light grayish</option>
+                            <option value="pccs-soft">PCCS soft</option>
+                            <option value="pccs-strong">PCCS strong</option>
+                            <option value="pccs-vivid">PCCS vivid</option>
+                            <option value="pccs-grayish">PCCS grayish</option>
+                            <option value="pccs-dull">PCCS dull</option>
+                            <option value="pccs-deep">PCCS deep</option>
+                            <option value="pccs-dark">PCCS dark</option>
+                            <option value="pccs-dark-grayish">PCCS dark grayish</option>
+                            <option value="gray">Gray</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-header box-header-font">
+                        <h2>Animation</h2>
+                    </div>
+                    <div class="line" style="display: flex; padding: 10px 8px 0; text-align: center;">
+                        <!--div style="width: 33.333%;">
+                            <div class="button-check button-font" id="button-animation">Animation</div>
+                        </div-->
+                        <div style="width: 33.333%;">
+                            <div class="button-click button-font" id="button-step" onselectstart="return false">Step</div>
+                        </div>
+                        <div style="width: 33.333%;">
+                            <div class="button-check button-font" id="button-pause" onselectstart="return false">Pause</div>
+                        </div>
+                        <div style="width: 33.333%;">
+                            <div class="button-click button-font" id="button-reset" onselectstart="return false">Reset</div>
+                        </div>
+                    </div>
+                    <div class="line">
+                        <label class="box-font">Speed:</label>
+                        <input type="text" class="input-text input-font" id="text-speed" onfocus="this.select()" value="930">
+                        <input type="range" class="slider-speed" id="range-speed" min="0" max="1000" step="1" value="930">
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-header box-header-font">
+                        <h2>Function</h2>
+                    </div>
+                    <div class="line" style="display: flex; padding: 10px 8px 0; text-align: center;">
+                        <div style="width: 33.333%;">
+                            <div class="button-click button-font" id="button-generate" value="false" onselectstart="return false">Generate</div>
+                        </div>
+                        <div style="width: 33.333%;">
+                            <div class="button-click button-font" id="button-solve" value="false" onselectstart="return false">Solve</div>
+                        </div>
+                        <div style="width: 33.333%;">
+                            <div class="button-click button-font" id="button-flood" value="false" onselectstart="return false">flood</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-header box-header-font">
+                        <h2>Editing</h2>
+                    </div>
+                    <div class="line" style="display: flex; padding: 10px 8px 0; text-align: center;">
+                        <div style="width: 33.333%;">
+                            <div class="button-click button-font" id="button-clear-road" onselectstart="return false">Clear road</div>
+                        </div>
+                        <div style="width: 33.333%;">
+                            <div class="button-click button-font" id="button-clear-all" onselectstart="return false">Clear all</div>
+                        </div>
+                        <div style="width: 33.333%;">
+                            <div class="button-click button-font" id="button-fill-wall" onselectstart="return false">Fill wall</div>
+                        </div>
+                    </div>
+                    <div class="line" style="display: flex; padding: 10px 8px 0; text-align: center; ">
+                        <div class="box-color" style="margin-bottom: auto;">
+                            <div class="div-color">Head</div>
+                            <div class="button-color button-color-reset" id="button-head-reset" onselectstart="return false">Reset</div>
+                            <input type="color" id="color-head" value="#000000">
+                        </div>
+                        <div class="box-color" style="margin-bottom: auto;">
+                            <div class="div-color">Path</div>
+                            <div class="button-color button-color-reset" id="button-path-reset" onselectstart="return false">Reset</div>
+                            <input type="color" id="color-path" value="#000000">
+                        </div>
+                        <div class="box-color" style="margin-bottom: auto;">
+                            <div class="div-color">Visit</div>
+                            <div class="button-color button-color-reset" id="button-visit-reset" onselectstart="return false">Reset</div>
+                            <input type="color" id="color-visit" value="#000000">
+                        </div>
+                        <div class="box-color">
+                            <div class="div-color">Grid</div>
+                            <div class="button-color" id="button-grid-show">Show</div>
+                            <div class="button-color button-color-reset" id="button-grid-reset" onselectstart="return false">Reset</div>
+                            <input type="color" id="color-grid" value="#000000">
+                        </div>
+                        <div class="box-color">
+                            <div class="div-color">Road</div> 
+                            <div class="button-color" id="button-road-select" value="false" onselectstart="return false">Select</div>
+                            <div class="button-color button-color-reset" id="button-road-reset" onselectstart="return false">Reset</div>
+                            <input type="color" id="color-road" value="#000000"> 
+                        </div>
+                        <div class="box-color">
+                            <div class="div-color">Wall</div>
+                            <div class="button-color" id="button-wall-select" value="false" onselectstart="return false">Select</div>
+                            <div class="button-color button-color-reset" id="button-wall-reset" onselectstart="return false">Reset</div>
+                            <input type="color" id="color-wall" value="#000000">
+                        </div>
+                        <div class="box-color">
+                            <div class="div-color">Begin</div>
+                            <div class="button-color" id="button-begin-select" value="false" onselectstart="return false">Select</div>
+                            <div class="button-color button-color-reset" id="button-begin-reset" onselectstart="return false">Reset</div>
+                            <input type="color" id="color-begin" value="#000000">
+                        </div>
+                        <div class="box-color">
+                            <div class="div-color">End</div>
+                            <div class="button-color" id="button-end-select" value="false" onselectstart="return false">Select</div>
+                            <div class="button-color button-color-reset" id="button-end-reset" onselectstart="return false">Reset</div> 
+                            <input type="color" id="color-end" value="#000000"> 
+                        </div>
+                    </div>
+                </div>
+                <!--div class="box">
+                    <div class="box-header box-header-font">
+                        <h2>File</h2>
+                    </div>
+                    <div class="line" style="display: flex; padding: 10px 8px 0; text-align: center;">
+                        <div style="width: 33.333%;">
+                            <div class="button-click button-font" id="button-save-image" onselectstart="return false">
+                                <a id="a-save-image" download="myImage.jpg" href="">Save image</a>
+                            </div>
+                        </div>
+                    </div>
+                </div-->
+            </div>
+            <div class="block-canvas">
+                <canvas id="canvas"></canvas>
+                <canvas id="canvas2"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="JavaScript/Main.js"></script>
+</body>
+</html>
